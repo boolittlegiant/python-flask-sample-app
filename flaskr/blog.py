@@ -27,10 +27,8 @@ def index():
 
 def get_post(id, check_author=True):
     """Get a post and its author by id.
-
     Checks that the id exists and optionally that the current user is
     the author.
-
     :param id: id of post to get
     :param check_author: require the current user to be the author
     :return: the post with author information
@@ -49,7 +47,7 @@ def get_post(id, check_author=True):
     )
 
     if post is None:
-        abort(404, "Post id {0} doesn't exist.".format(id))
+        abort(404, f"Post id {id} doesn't exist.")
 
     if check_author and post["author_id"] != g.user["id"]:
         abort(403)
@@ -114,7 +112,6 @@ def update(id):
 @login_required
 def delete(id):
     """Delete a post.
-
     Ensures that the post exists and that the logged in user is the
     author of the post.
     """
