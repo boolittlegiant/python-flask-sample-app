@@ -13,7 +13,7 @@ jobs:
 
     - name: Install pylint
       run: |
-        pip install -e .
+        pip install -e {0}.
         pip install pylint
         
     - name: Run pylint
