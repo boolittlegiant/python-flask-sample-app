@@ -17,7 +17,7 @@ jobs:
         pip install pylint
         
     - name: Run pylint
-      run: |
+      run: | 
         pylint --rcfile=pylint.conf flaskr > pylint.txt
         
     - name: Upload pylint results
