@@ -64,8 +64,8 @@ def register():
             db.execute("SELECT id FROM user WHERE username = ?", (username,)).fetchone()
             is not None
         ):
-            error = "User {0} is already registered.".format(username)
-
+            error = f"User {0} is already registered."
+            
         if error is None:
             # the name is available, store it in the database and go to
             # the login page
